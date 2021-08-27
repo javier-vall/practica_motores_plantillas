@@ -1,0 +1,32 @@
+doctype
+html(lang='es')
+  include partials/head.pug
+  body
+    include partials/nav.pug
+    div(class="container")
+      div(class="row justify-content-center")
+        div(class="col-4")
+          h2 Ingreso de Producto
+          form(id="formulario" method="POST", action="/products")
+            label(for="name", class="form-label") Nombre:
+            input(type="text", class="form-control", id="name", name="name")
+            label(for="price", class="form-label") Precio:
+            input(type="number", class="form-control", id="price", name="price")
+            label(for="url", class="form-label") URL:
+            input(type="text", class="form-control", id="url", name="url")
+            div(class="d-grid mt-3")
+              button(type="submit", class="btn btn-primary") Enviar
+    include partials/scripts.pug
+    script.
+      document.getElementById("formulario").onsubmit = (e) => {
+
+        let nombre = document.getElementById("name").value;
+        let precio = document.getElementById("price").value;
+        alert(
+          `
+          Nuevo producto agregado:
+          Nombre: ${nombre}
+          Precio: $ ${precio}
+          `
+        );
+        }

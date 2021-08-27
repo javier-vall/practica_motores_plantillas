@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>Plantilla con EJS</title>
+  </head>
+  <body>
+    <a href="/" class="btn btn-link">Formulario</a>
+    <a href="/products" class="btn btn-link">Productos</a>
+    <h1>Registro de Productos</h1>
+    <form id="formulario" method="POST" action="/products">
+      <div class="mb-3">
+        <label for="productInput" class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="productInput"
+          name="description"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="priceInput" class="form-label">Precio</label>
+        <input
+          type="number"
+          class="form-control"
+          id="priceInput"
+          name="price"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="imgProduct" class="form-label">Foto URL</label>
+        <input
+          type="text"
+          class="form-control"
+          id="imgProduct"
+          name="thumbnail"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+
+    <script>
+      document.getElementById("formulario").onsubmit = () => {
+        let titulo = document.getElementById("productInput").value;
+        let precio = document.getElementById("priceInput").value;
+        alert(
+          "Nuevo producto agregado: \n Descripcion: " +
+            titulo +
+            "\n Precio: $" +
+            precio
+        );
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

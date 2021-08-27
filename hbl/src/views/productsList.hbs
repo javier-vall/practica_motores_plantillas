@@ -1,0 +1,23 @@
+<h2>Products List</h2>
+{{#if products}}
+<table class="table table-secondary table-hover table-striped ">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Precio</th>
+      <th>Foto</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products as |product|}}
+    <tr>
+      <td>{{product.description}}</td>
+      <td>$ {{product.price}}</td>
+      <td><img src="{{product.thumbnail}}" width="48"></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+  <h5>No hay productos en la lista.</h5>
+{{/if}}

@@ -1,0 +1,53 @@
+<%- include("./partials/head") -%>
+<body>
+  <div class="container">
+    <%- include("./partials/header") -%>
+    <div class="row justify-content-center">
+      <form id="formulario" method="POST" action="/products" class="col-6">
+          <div class="mb-3">
+            <label for="productInput" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="productInput"
+              name="description"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="priceInput" class="form-label">Precio</label>
+            <input
+              type="number"
+              class="form-control"
+              id="priceInput"
+              name="price"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="imgProduct" class="form-label">Foto URL</label>
+            <input
+              type="text"
+              class="form-control"
+              id="imgProduct"
+              name="thumbnail"
+            />
+          </div>
+    
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Registrar</button>
+        </form>
+    </div>
+  </div>
+
+    <script>
+      document.getElementById("formulario").onsubmit = () => {
+        let titulo = document.getElementById("productInput").value;
+        let precio = document.getElementById("priceInput").value;
+        alert(
+          "Nuevo producto agregado: \n Descripcion: " +
+            titulo +
+            "\n Precio: $" +
+            precio
+        );
+      };
+    </script>
+    <%- include("./partials/footer") -%>
+
